@@ -16,14 +16,15 @@ const Content = styled.main`
   h5,
   h6 {
     font-family: "Rubik";
+    color: ${(p) => p.theme.midOcean};
   }
 `;
 
-export function PageLayout() {
+export function PageLayout({ children }) {
   return (
     <>
       <Header />
-      <Content>Main Content</Content>
+      <Content>{children}</Content>
     </>
   );
 }

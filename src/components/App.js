@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import News from "./pages/News.js";
@@ -25,9 +25,26 @@ a {
 }
 `;
 
+const theme = {
+  //Red
+  lightRed: "#FEF2EF",
+  midRed: "#FD0D67",
+  darkRed: "#B81046",
+
+  //Ocean Blue
+  lightOcean: "#EFF3FF",
+  midOcean: "#5110D5",
+  darkOcean: "#33058F",
+
+  //Ink
+  lightInk: "#D8D5DA",
+  midInk: "#6B646F",
+  darkInk: "#231E25",
+};
+
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
@@ -36,7 +53,7 @@ function App() {
           <Route path="/news" element={<News />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </ThemeProvider>
   );
 }
 

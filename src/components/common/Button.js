@@ -1,20 +1,27 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Button = styled.button`
-  appearance: none;
-  background-color: ${(p) => (p.secondary ? "#FD0D67" : "#5110D5")};
   color: white;
-  padding: 3% 8%;
-  margin: 2%;
-  font-size: 3rem;
-  font-family: "Rubik";
-  font-weight: 700;
-  border: 1px solid white;
-  border-radius: 10px;
+  background: ${(p) => (p.secondary ? "#FD0D67" : "#5110D5")};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
   cursor: pointer;
-  a:hover {
-    background-color: "#33058F";
+  font-weight: 700;
+  ${(p) =>
+    p.large
+      ? css`
+          padding: 3%;
+          border-radius: 8px;
+          font-size: 2rem;
+        `
+      : css`
+          padding: 2% 6%;
+          border-radius: 8px;
+          font-size: 1em;
+        `}
+  &:disabled {
+    background: #eee;
+    color: #666;
   }
 `;
 

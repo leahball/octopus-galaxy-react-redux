@@ -1,31 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link as ReactRouterDomLink, useLocation } from "react-router-dom";
-import { lightOcean, lightRed, midOcean, midRed } from "../theme/Colors";
 import { Logo } from "../theme/Logo";
 
 const HeaderWrapper = styled.header`
-  background-color: ${lightRed};
+  background-color: ${(p) => p.theme.lightRed};
   display: flex;
 `;
 
 const HeaderLogo = styled(Logo)`
   text-align: left;
-  color: ${midOcean};
+  color: ${(p) => p.theme.midOcean};
   font-size: 3rem;
   padding: 2%;
   grid-area: "logo";
 `;
 
 const Menu = styled.div`
-  display: block;
+  display: ${(p) => (p.open ? "block" : "none")};
   position: absolute;
   width: 100%;
   top: 60px;
   left: 0px;
   padding: 0;
   box-sizing: border-box;
-  border-bottom: 2px solid ${midOcean};
+  border-bottom: 2px solid ${(p) => p.theme.midOcean};
 
   @media (min-width: 768px) {
     display: flex;
@@ -50,21 +49,44 @@ const StyledLink = styled(Link)`
   box-sizing: border-box;
   margin: 0 0;
   font-family: "Poppins";
-  color: ${midOcean};
+  color: ${(p) => p.theme.midOcean};
   font-weight: ${(p) => (p.isActive ? 600 : 300)};
   background-color: ${(p) => (p.isActive ? "white" : "#EFF3FF")};
 
   @media (min-width: 768px) {
-    background-color: ${lightRed};
+    background-color: ${(p) => p.theme.lightRed};
+  }
+`;
+
+const MobileMenuIcon = styled.div`
+  margin: auto 0 auto auto;
+  width: 45px;
+  min-width: 25px;
+  padding: 10px;
+  > div {
+    height: 3px;
+    background: ${(p) => p.theme.midOcean};
+    margin: 5px 0;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    display: none;
   }
 `;
 
 export function Header() {
   const { pathname } = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <HeaderWrapper>
       <HeaderLogo>Octopus Galaxy</HeaderLogo>
-      <Menu>
+      <MobileMenuIcon onClick={() => setMenuOpen((s) => !s)}>
+        <div />
+        <div />
+        <div />
+      </MobileMenuIcon>
+      <Menu open={menuOpen}>
         <StyledLink to="/" isActive={pathname === "/"}>
           home
         </StyledLink>
