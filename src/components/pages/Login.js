@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { PageLayout } from "../common/PageLayout";
 import styled from "styled-components";
 import Input from "../common/Input";
 import { Button } from "../common/Button";
@@ -57,7 +56,7 @@ function Login() {
   }, []);
 
   return (
-    <PageLayout>
+ <>
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         {loading ? (
@@ -92,7 +91,7 @@ function Login() {
           </>
         )}
       </Form>
-    </PageLayout>
+      </>
   );
 }
 

@@ -4,7 +4,9 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import News from "./pages/News.js";
-import Play from "./pages/Play";
+import Play from "./pages/Play/Play";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -48,6 +50,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
+        <Header as="header" />
         <Routes>
           <Route exact path="/login" element={<Login />}></Route>
           <Route exact path="/news" element={<News />}></Route>
@@ -55,6 +58,7 @@ function App() {
           <Route exact path="/" element={<Home />}></Route>
         </Routes>
       </BrowserRouter>
+      <Footer as="footer" />
     </ThemeProvider>
   );
 }
