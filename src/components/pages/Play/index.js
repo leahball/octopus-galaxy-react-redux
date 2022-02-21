@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../../common/Button";
-import SingleCard from "../../SingleCard";
-import Icon1 from "../../../assets/images/small/Water_Plant-small.png";
-import Strength from "../../../assets/images/small/strength-sm.png";
-import Camo from "../../../assets/images/small/camo-sm.png";
-import Synesthesia from "../../../assets/images/small/synesthesia-sm.png";
-import Connect from "../../../assets/images/small/connect-sm.png";
-import Craft from "../../../assets/images/small/craft-sm.png";
-import Regeneration from "../../../assets/images/small/regenerates-sm.png";
-import Jet from "../../../assets/images/small/jet-propulsion-sm.png";
-import Decentralized from "../../../assets/images/small/decentralized-sm.png";
+import SingleCard from "./SingleCard";
+import Conch from "../../../images/small/conch-sm.png";
 
 import {
   CardGrid,
@@ -24,14 +16,23 @@ import {
 } from "./PlayElements";
 
 const cardImages = [
-  { src: { Strength }, matched: false },
-  { src: { Synesthesia }, matched: false },
-  { src: { Camo }, matched: false },
-  { src: { Connect }, matched: false },
-  { src: { Craft }, matched: false },
-  { src: { Regeneration }, matched: false },
-  { src: { Jet }, matched: false },
-  { src: { Decentralized }, matched: false },
+  { src: require("../../../images/small/strength-sm.png"), matched: false },
+  {
+    src: require("../../../images/small/synesthesia-sm.png"),
+    matched: false,
+  },
+  { src: require("../../../images/small/camo-sm.png"), matched: false },
+  { src: require("../../../images/small/connect-sm.png"), matched: false },
+  { src: require("../../../images/small/craft-sm.png"), matched: false },
+  { src: require("../../../images/small/regenerates-sm.png"), matched: false },
+  {
+    src: require("../../../images/small/jet-propulsion-sm.png"),
+    matched: false,
+  },
+  {
+    src: require("../../../images/small/decentralized-sm.png"),
+    matched: false,
+  },
 ];
 
 export default function Play() {
@@ -95,11 +96,12 @@ export default function Play() {
     <GameLayout>
       <GameSidebar>
         <DirectionsWrapper>
-          <DirectionIcon src={Icon1} />
+          <DirectionIcon src={Conch} />
           <DirectionsH>Directions</DirectionsH>
           <DirectionsP>
-            *For now* just try to match cards and keep score of how many turns
-            you can get it in! <br />
+            *For now* match cards and keep score of how many turns you can get
+            all matches in! <br />
+            <br />
             ***Functionality not coded yet!!! Stay tuned!***
             <br />
             Gather Octopus attributes based on the memory pair you select. There

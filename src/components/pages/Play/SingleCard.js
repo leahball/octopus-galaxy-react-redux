@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BackImage from "../assets/images/small/backside.png";
+import BackImage from "../../../images/small/backside.png";
 
 export const Card = styled.div`
   position: relative;

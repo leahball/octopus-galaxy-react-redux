@@ -25,27 +25,32 @@ export const DirectionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: flex-start;
   min-height: 450px;
 `;
 
 export const DirectionIcon = styled.img`
   background-image: cover center;
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  /* height: 220px; */
+  width: 60%;
+  padding: 3%;
 `;
 
 export const DirectionsH = styled(Logo)`
-  font-size: 3rem;
+  font-size: 4rem;
+  margin-top: 20px;
   margin-bottom: 20px;
   color: ${(p) => p.theme.midOcean};
+  text-decoration: overline;
+  text-decoration-style: wavy;
+  text-decoration-color: ${(p) => p.theme.midRed};
 `;
 
 export const DirectionsP = styled.p`
   font-size: 1.6rem;
-  color: ${(p) => p.theme.darkInk}
+  color: ${(p) => p.theme.darkInk};
+  background-color: white;
+  padding: 5%;
+  border-radius: 20px;
 `;
 export const GameWrapper = styled.div`
   display: grid;
@@ -60,7 +65,7 @@ export const TurnWrapper = styled.div`
 
   h2 {
     font-size: 4rem;
-    color: ${(p) => p.theme.darkOcean}
+    color: ${(p) => p.theme.darkOcean};
   }
   h3 {
     font-size: 2rem;
