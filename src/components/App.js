@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import News from "./pages/News.js";
+import News from "./pages/News/index";
 import Play from "./pages/Play/index";
 import { Header } from "./Header";
 import { Footer } from "./Footer";

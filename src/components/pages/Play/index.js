@@ -16,7 +16,15 @@ import {
 } from "./PlayElements";
 
 const cardImages = [
-  { src: require("../../../images/small/strength-sm.png"), matched: false },
+  {
+    id: 1,
+    src: require("../../../images/small/strength-sm.png"),
+    matched: false,
+    name: "strength",
+    description: "empty for now",
+    value: 1,
+    selected: false,
+  },
   {
     src: require("../../../images/small/synesthesia-sm.png"),
     matched: false,
@@ -68,6 +76,7 @@ export default function Play() {
           return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
+              //where to add toggle open to 
             } else {
               return card;
             }

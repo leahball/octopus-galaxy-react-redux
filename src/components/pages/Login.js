@@ -79,19 +79,19 @@ function Login() {
             <Spinner />
           ) : (
             <>
+              <label htmlFor="username">Username: </label>
               <Input
                 value={formFields.username}
                 onChange={handleInputChange}
                 type="text"
                 name="username"
-                placeholder="username"
               />
+              <label htmlFor="password">Password: </label>
               <Input
                 value={formFields.password}
                 onChange={handleInputChange}
                 type="password"
                 name="password"
-                placeholder="password"
               />
             </>
           )}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Logo } from "../../../theme/Logo";
 
 export const GameLayout = styled.div`
-  background-color: ${(p) => p.theme.lightOcean};
+  background-color: ${(p) => p.theme.darkOcean};
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -39,10 +39,10 @@ export const DirectionsH = styled(Logo)`
   font-size: 4rem;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: ${(p) => p.theme.midOcean};
+  color: ${(p) => p.theme.lightOcean};
   text-decoration: overline;
   text-decoration-style: wavy;
-  text-decoration-color: ${(p) => p.theme.midRed};
+  text-decoration-color: ${(p) => p.theme.lightRed};
 `;
 
 export const DirectionsP = styled.p`
@@ -65,7 +65,7 @@ export const TurnWrapper = styled.div`
 
   h2 {
     font-size: 4rem;
-    color: ${(p) => p.theme.darkOcean};
+    color: ${(p) => p.theme.lightOcean};
   }
   h3 {
     font-size: 2rem;

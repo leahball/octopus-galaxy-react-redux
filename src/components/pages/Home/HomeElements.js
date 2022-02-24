@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Logo } from "../../../theme/Logo";
 
 export const HomeWrapper = styled.div`
-  background-color: ${(p) => p.theme.lightOcean};
+  background-color: ${(p) => p.theme.darkOcean};
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -35,12 +35,12 @@ export const HomeH = styled(Logo)`
   font-size: 4.5rem;
   margin-top: 20px;
   margin-bottom: 20px;
-  color: ${(p) => p.theme.midOcean};
+  color: ${(p) => p.theme.lightOcean};
 `;
 
 export const HomeP = styled.p`
   font-size: 2.4rem;
-  color: ${(p) => p.theme.darkInk};
+  color: ${(p) => p.theme.lightRed};
 `;
 
 export const OctopusImageWrapper = styled.img`
