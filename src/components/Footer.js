@@ -1,20 +1,18 @@
 import React from "react";
 import styled from "styled-components";
-import { lightRed, midOcean } from "../theme/Colors";
 import { Logo } from "../theme/Logo";
 
 const NavbarStyled = styled.footer`
-  position: fixed;
   width: 100%;
   bottom: 0px;
-  background-color: ${midOcean};
+  background-color: ${(p) => p.theme.midOcean};
   padding: 15px 40px;
 `;
 
 const HeaderLogo = styled(Logo)`
   text-align: left;
-  color: ${lightRed};
-  font-size: 2rem;
+  color: ${(p) => p.theme.lightRed};
+  font-size: 1.5rem;
 `;
 
 export function Footer() {

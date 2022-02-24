@@ -10,13 +10,13 @@ const Button = styled.button`
   ${(p) =>
     p.large
       ? css`
-          padding: 3%;
+          padding: 2.5%;
           border-radius: 8px;
           font-size: 2rem;
         `
       : css`
-          padding: 2% 6%;
-          border-radius: 8px;
+          padding: 2% 4%;
+          border-radius: 10px;
           font-size: 1em;
         `}
   &:disabled {
