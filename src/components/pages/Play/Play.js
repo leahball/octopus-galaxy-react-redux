@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "../../common/Button";
 import SingleCard from "./SingleCard";
-// import Conch from "../../../assets/small/conch-sm.png";
-// import { useOpenAttrs } from "../../../Hooks/useOpenAttrs";
 import { AttributeDialog } from "./AttributeDialog";
 import { memoryData } from "../../../data/memoryData";
+// import { useOpenAttrs } from "../../../Hooks/useOpenAttrs";
 
 import {
   CardGrid,
@@ -24,7 +23,7 @@ export default function Play() {
   const [choiceOne, setChoiceOne] = useState(null);
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
-  const [openAttrs, setOpenAttrs] = useState(true);
+  const [openAttrs, setOpenAttrs] = useState();
 
   //shuffle cards
   const shuffleCards = () => {
@@ -44,29 +43,29 @@ export default function Play() {
   };
 
   //compare 2 selected cards
-  useEffect(() => {
-    if (choiceOne && choiceTwo) {
-      setDisabled(true);
-      // console.log(`${openAttrs} from Play.js`);
-      if (choiceOne.src === choiceTwo.src) {
-        setCards((prevCards) => {
-          return prevCards.map((card) => {
-            if (card.src === choiceOne.src) {
-              // console.log("Card is matched in Play.js logic");
-              setOpenAttrs(true);
-              return { ...card, matched: true };
-              ///matched logic goes here?
-            } else {
-              return card;
-            }
+  useEffect(
+    (memoryData) => {
+      if (choiceOne && choiceTwo) {
+        setDisabled(true);
+        if (choiceOne.src === choiceTwo.src) {
+          setCards((prevCards) => {
+            return prevCards.map((card) => {
+              if (card.src === choiceOne.src) {
+                setOpenAttrs(card);
+                return { ...card, matched: true };
+              } else {
+                return card;
+              }
+            });
           });
-        });
-        resetTurn();
-      } else {
-        setTimeout(() => resetTurn(), 1500);
+          resetTurn();
+        } else {
+          setTimeout(() => resetTurn(), 1500);
+        }
       }
-    }
-  }, [choiceOne, choiceTwo]);
+    },
+    [choiceOne, choiceTwo]
+  );
 
   //reset choices & increase turn
   const resetTurn = () => {
@@ -82,6 +81,7 @@ export default function Play() {
 
   return (
     <>
+      {/* <AttributeDialog {...openAttrs} /> */}
       <AttributeDialog setOpenAttrs={setOpenAttrs} openAttrs={openAttrs} />
       <GameLayout>
         <GameSidebar>
@@ -89,11 +89,7 @@ export default function Play() {
             <DirectionIcon src="../../../assets/small/conch-sm.png" />
             <DirectionsH>Directions</DirectionsH>
             <DirectionsP>
-              Gather Octopus facts based on the memory pair you select. There
-              are 8 total matches but you can only pick 3 attributes to take to
-              the next round. You may flip each match only twice-- once to see
-              what attribute it possesses, the second to revisit and select
-              it--all require you to use your memory!
+              Gather Octopus facts based on the memory pair you select. There are 8 total matches! Test your memory and learn all about Cephalopods!
             </DirectionsP>
           </DirectionsWrapper>
         </GameSidebar>
@@ -113,7 +109,7 @@ export default function Play() {
                 flipped={
                   card === choiceOne || card === choiceTwo || card.matched
                 }
-                openAttrs={openAttrs}
+                // openAttrs={openAttrs}
                 disabled={disabled}
               />
             ))}

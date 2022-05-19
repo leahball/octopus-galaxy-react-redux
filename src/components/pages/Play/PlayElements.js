@@ -46,8 +46,9 @@ export const DirectionsH = styled(Logo)`
 `;
 
 export const DirectionsP = styled.p`
-  font-size: 1.6rem;
-  color: ${(p) => p.theme.darkInk};
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+  color: ${(p) => p.theme.midInk};
   background-color: white;
   padding: 5%;
   border-radius: 20px;
@@ -91,21 +92,21 @@ export const Directions = styled.div`
   padding: 10% 12%;
 `;
 
-export const Match = styled.div`
-  height: 100px;
-  padding: 20px;
-  font-size: 20px;
-  background-image: ${({ img }) => `url(${img});`};
-  background-position: center;
-  background-size: cover;
-  border-radius: 7px;
-  margin-top: 5px;
-  transition-property: box-shadow margin-top filter;
-  transition-duration: 0.1s;
-  box-shadow: 0px 0px 2px 0px grey;
-  &:hover {
-    cursor: pointer;
-    margin: 0px 0px 5px;
-    box-shadow: 0px 0px 10px 0px grey;
-  }
-`;
+// export const Match = styled.div`
+//   height: 100px;
+//   padding: 20px;
+//   font-size: 20px;
+//   background-image: ${({ img }) => `url(${img});`};
+//   background-position: center;
+//   background-size: cover;
+//   border-radius: 7px;
+//   margin-top: 5px;
+//   transition-property: box-shadow margin-top filter;
+//   transition-duration: 0.1s;
+//   box-shadow: 0px 0px 2px 0px grey;
+//   &:hover {
+//     cursor: pointer;
+//     margin: 0px 0px 5px;
+//     box-shadow: 0px 0px 10px 0px grey;
+//   }
+// `;

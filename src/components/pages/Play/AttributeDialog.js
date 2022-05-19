@@ -3,17 +3,26 @@ import styled from "styled-components";
 // import { useOpenAttrs } from "../../../Hooks/useOpenAttrs";
 
 const Dialog = styled.div`
-  width: 300px;
+  width: 330px;
   background-color: white;
   position: fixed;
   top: 90px;
   z-index: 5;
   max-height: calc(100% - 100px);
-  left: calc(50% - 150px);
+  left: calc(50% - 165px);
   display: flex;
   flex-direction: column;
-  transition: 0.3s ease-in;
   border-radius: 20px;
+  animation-name: example;
+  animation-duration: 1s;
+  @keyframes example {
+    0% {
+      left: 0px;
+    }
+    100% {
+      left: calc(50% - 165px);
+    }
+  }
 `;
 
 const DialogShadow = styled.div`
@@ -27,16 +36,15 @@ const DialogShadow = styled.div`
 `;
 
 const DialogAttrsImg = styled.div`
-  min-height: 100px;
-  margin-bottom: 20px;
+  min-height: 190px;
+  margin-bottom: 10px;
   ${({ img }) => `background-image: url(${img});`}
   background-position: center;
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 175px;
 `;
 
 const DialogBanner = styled.div`
-  min-height: 100px;
-  margin-bottom: 20px;
   background-color: ${(p) => p.theme.lightRed};
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -49,15 +57,22 @@ const DialogBanner = styled.div`
 `;
 
 const AttrsName = styled.h2`
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-style: italic;
   text-align: center;
-  color: ${(p) => p.theme.darkInk};
+  font-weight: 400;
+  background-color: ${(p) => p.theme.lightOcean};
+  margin: 0px 20px;
+  border-radius: 10px;
+  color: ${(p) => p.theme.midOcean};
 `;
 
-const AttrsDesc = styled.h2`
-  font-size: 1.5rem;
+const AttrsDesc = styled.p`
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   text-align: center;
-  color: ${(p) => p.theme.darkInk};
+  padding: 20px 40px;
+  color: ${(p) => p.theme.darkOcean};
 `;
 
 const AttrsButtons = styled.div`
@@ -67,7 +82,7 @@ const AttrsButtons = styled.div`
 `;
 
 export const AttrsAdd = styled.div`
-  margin: 10px;
+  margin-bottom: 10px;
   color: white;
   height: 40px;
   border-radius: 10px;
@@ -75,6 +90,11 @@ export const AttrsAdd = styled.div`
   text-align: center;
   cursor: pointer;
   background-color: ${(p) => p.theme.midOcean};
+  &:hover {
+    cursor: pointer;
+    filter: contrast(100%);
+    box-shadow: 0px 0px 10px 0px grey;
+  }
 `;
 
 export const AttrsSkip = styled.div`
@@ -97,7 +117,7 @@ export const DialogContent = styled.div`
 
 function AttributeDialogContainer({ openAttrs, setOpenAttrs }) {
   function close() {
-    setOpenAttrs(false);
+    setOpenAttrs();
   }
 
   // function addtoAttrs() {
@@ -112,18 +132,15 @@ function AttributeDialogContainer({ openAttrs, setOpenAttrs }) {
         </DialogBanner>
         <DialogContent>
           <DialogAttrsImg img={openAttrs.src} />
-          <AttrsName>{openAttrs.title}Hello</AttrsName>
-          <AttrsDesc>
-            {openAttrs.description}
-          
-          </AttrsDesc>
+          <AttrsName>{openAttrs.title}</AttrsName>
+          <AttrsDesc>{openAttrs.description}</AttrsDesc>
           <AttrsButtons>
             <AttrsAdd onClick={close}>Close</AttrsAdd>
-            <AttrsSkip
+            {/* <AttrsSkip
             // onClick={addToSkip}
             >
               Skip
-            </AttrsSkip>
+            </AttrsSkip> */}
           </AttrsButtons>
         </DialogContent>
       </Dialog>
