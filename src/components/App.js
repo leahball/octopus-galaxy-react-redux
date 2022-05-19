@@ -4,9 +4,10 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import News from "./pages/News/index";
-import Play from "./pages/Play/index";
+import Play from "./pages/Play/Play.js";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { AttributeDialog } from "./pages/Play/AttributeDialog";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -49,6 +50,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <AttributeDialog />
       <BrowserRouter>
         <Header as="header" />
         <Routes>

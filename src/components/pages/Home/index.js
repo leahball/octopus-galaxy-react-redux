@@ -1,5 +1,5 @@
 import React from "react";
-import LargeOctopus from "../../../images/large/Octopus.png";
+// import LargeOctopus from "/assets/large/Octopus.png";
 
 import {
   HomeWrapper,
@@ -16,16 +16,15 @@ export default function Home() {
       <HomeWrapper>
         <HomeSidebar>
           <IntroWrapper>
-          <HomeH> Welcome to Octopus Galaxy</HomeH>
-          <HomeP>
-            An interactive game to learn about our fascinating neighbors in the
-            sea!
-          </HomeP>
+            <HomeH> Welcome to Octopus Galaxy</HomeH>
+            <HomeP>
+              An interactive game to learn about our fascinating neighbors in
+              the sea!
+            </HomeP>
           </IntroWrapper>
         </HomeSidebar>
-        <OctopusImageWrapper src={LargeOctopus}></OctopusImageWrapper>
+        <OctopusImageWrapper src="/assets/large/Strength.png"></OctopusImageWrapper>
       </HomeWrapper>
-      
     </>
   );
 }

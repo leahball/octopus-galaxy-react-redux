@@ -3,8 +3,10 @@ import styled from "styled-components";
 import { Link as ReactRouterDomLink, useLocation } from "react-router-dom";
 import { Logo } from "../theme/Logo";
 
+// ${(p) => p.theme.lightRed}
+
 const HeaderWrapper = styled.header`
-  background-color: ${(p) => p.theme.lightRed};
+  background-color: white;
   display: flex;
 `;
 
@@ -51,10 +53,10 @@ const StyledLink = styled(Link)`
   font-family: "Poppins";
   color: ${(p) => p.theme.midOcean};
   font-weight: ${(p) => (p.isActive ? 600 : 300)};
-  background-color: ${(p) => (p.isActive ? "white" : "#EFF3FF")};
+  background-color: ${(p) => (p.isActive ? "#EFF3FF" : "white")};
 
   @media (min-width: 768px) {
-    background-color: ${(p) => p.theme.lightRed};
+    background-color: white;
   }
 `;
 
