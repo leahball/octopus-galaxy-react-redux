@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import BackImage from "../../../images/small/backside.png";
+// import BackImage from "/assets/small/backside.png";
 
 export const Card = styled.div`
   position: relative;
@@ -41,7 +41,7 @@ export default function SingleCard({ card, handleChoice, flipped, disabled }) {
         <img className="front" src={card.src} alt="card front" />
         <img
           className="back"
-          src={BackImage}
+          src="/assets/small/backside.png"
           alt="card back"
           onClick={handleClick}
         />
