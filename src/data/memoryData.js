@@ -30,7 +30,7 @@ export const memoryData = [
     match: false,
   },
   {
-    title: "Connected",
+    title: "Connection",
     summary: "",
     src: "/assets/small/connect-sm.png",
     value: "2",
@@ -66,7 +66,7 @@ export const memoryData = [
     match: false,
   },
   {
-    title: "Decentralized",
+    title: "Decentralization",
     summary: "",
     src: "/assets/small/decentralized-sm.png",
     value: "4",

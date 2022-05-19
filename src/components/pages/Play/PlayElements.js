@@ -8,6 +8,8 @@ export const GameLayout = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 4%;
   padding: 3% 6%;
+  align-items: center;
+  justify-content: center;
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -59,6 +61,7 @@ export const GameWrapper = styled.div`
   background-color: white;
   padding: 4%;
   border-radius: 20px;
+  max-width: 650px;
 `;
 
 export const TurnWrapper = styled.div`
