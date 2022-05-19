@@ -82,7 +82,7 @@ const AttrsButtons = styled.div`
 `;
 
 export const AttrsAdd = styled.div`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: white;
   height: 40px;
   border-radius: 10px;
