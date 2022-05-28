@@ -28,13 +28,24 @@ export const DirectionsWrapper = styled.div`
   flex-direction: column;
   align-items: left;
   justify-content: flex-start;
-  min-height: 450px;
+
+  @media screen and (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center:
+    justify-content: center;
+  }
 `;
 
 export const DirectionIcon = styled.img`
   background-image: cover center;
   width: 60%;
   padding: 3%;
+
+  @media screen and (max-width: 500px) {
+    width: 40%;
+    padding-left: 20px;
+  }
 `;
 
 export const DirectionsH = styled(Logo)`
@@ -45,6 +56,10 @@ export const DirectionsH = styled(Logo)`
   text-decoration: overline;
   text-decoration-style: wavy;
   text-decoration-color: ${(p) => p.theme.midRed};
+
+  @media screen and (max-width: 500px) {
+    font-size: 3rem;
+  }
 `;
 
 export const DirectionsP = styled.p`
@@ -54,6 +69,11 @@ export const DirectionsP = styled.p`
   background-color: white;
   padding: 5%;
   border-radius: 20px;
+
+  @media screen and (max-width: 500px) {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+  }
 `;
 export const GameWrapper = styled.div`
   display: grid;

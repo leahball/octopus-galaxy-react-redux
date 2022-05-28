@@ -23,6 +23,10 @@ const Dialog = styled.div`
       left: calc(50% - 165px);
     }
   }
+
+  @media screen and (max-width: 500px) {
+    top: 35px;
+  }
 `;
 
 const DialogShadow = styled.div`

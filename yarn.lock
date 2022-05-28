@@ -8861,6 +8861,13 @@
   "resolved" "https://registry.npmjs.org/ws/-/ws-8.4.2.tgz"
   "version" "8.4.2"
 
+"x2js@^3.1.1":
+  "integrity" "sha1-98TmB3wpRw8rDdZxSAWHGyVmcRk="
+  "resolved" "https://registry.npmjs.org/x2js/-/x2js-3.1.1.tgz"
+  "version" "3.1.1"
+  dependencies:
+    "xmldom" "^0.1.19"
+
 "xml-js@^1.6.11":
   "integrity" "sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g=="
   "resolved" "https://registry.npmjs.org/xml-js/-/xml-js-1.6.11.tgz"
@@ -8877,6 +8884,11 @@
   "integrity" "sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw=="
   "resolved" "https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz"
   "version" "2.2.0"
+
+"xmldom@^0.1.19":
+  "integrity" "sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ=="
+  "resolved" "https://registry.npmjs.org/xmldom/-/xmldom-0.1.31.tgz"
+  "version" "0.1.31"
 
 "xtend@^4.0.2":
   "integrity" "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
