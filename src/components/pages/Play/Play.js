@@ -89,7 +89,9 @@ export default function Play() {
             <DirectionIcon src="../../../assets/small/conch-sm.png" />
             <DirectionsH>Directions</DirectionsH>
             <DirectionsP>
-              Gather Octopus facts based on the memory pair you select. There are 8 total matches! Test your memory and learn all about Cephalopods!
+              Gather Octopus facts based on the memory pair you select. There
+              are 8 total matches! Test your memory and learn all about
+              Cephalopods!
             </DirectionsP>
           </DirectionsWrapper>
         </GameSidebar>
