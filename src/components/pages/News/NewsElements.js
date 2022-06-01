@@ -42,7 +42,7 @@ export const NewsTextWrapper = styled.div`
 `;
 
 export const NewsH = styled(Logo)`
-  font-size: 2.6rem;
+  font-size: 2.7rem;
   color: ${(p) => p.theme.darkOcean};
   a:hover {
     cursor: pointer;
@@ -51,7 +51,7 @@ export const NewsH = styled(Logo)`
 `;
 
 export const NewsDesc = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   line-height: 2rem;
   padding-top: 10px;
 `;
