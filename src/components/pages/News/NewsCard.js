@@ -11,11 +11,12 @@ import {
 } from "./NewsElements";
 
 const NewsCards = ({ currentArticles }) => {
+  console.log(currentArticles);
   return (
     <NewsCard>
-      {currentArticles.map((article) => (
+      {currentArticles?.item?.map((article) => (
         <NewsContentWrapper>
-          <NewsI src="../../../assets/small/backside.png"></NewsI>
+          <NewsI src={article.content._url}></NewsI>
           <NewsTextWrapper>
             <Byline>{article.creator}</Byline>
             <a href={article.link} target="_blank" rel="noreferrer">

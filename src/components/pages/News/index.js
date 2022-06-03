@@ -13,15 +13,14 @@ console.log(X2JS);
 // title: "Octopus tortures and kills itself after mating ... Did scientists finally explain this phenomenon?"
 
 const News = () => {
-  const [currentArticles, setCurrentArticles] = useState([]);
+  const [currentArticles, setCurrentArticles] = useState({});
 
   useEffect(() => {
     axios
       .get("https://rss.app/feeds/Zh7rUn5XnuPxC0en.xml")
       .then((value) => {
         const document = new X2JS().xml2js(value.data);
-        console.log(document.rss.channel.item);
-        setCurrentArticles(document.rss.channel.item);
+        setCurrentArticles(document.rss.channel);
       })
       .catch();
   }, []);
